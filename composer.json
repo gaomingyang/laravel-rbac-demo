@@ -10,6 +10,8 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
+        "livewire/livewire": "^3.4",
+        "livewire/volt": "^1.0",
         "tymon/jwt-auth": "^2.1"
     },
     "require-dev": {
@@ -27,7 +29,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/Utils/global_funcs.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+// for admin user
+require __DIR__ . '/apis/admin.php';
 
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();

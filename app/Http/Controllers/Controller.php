@@ -9,4 +9,15 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
+
+	public function error($code, $msg = null, $data = null)
+	{
+		$error = [
+			'code'     => (int)$code,
+			'trace_id' => trace_id(),
+			'msg'      => $msg == '' ? trans('errors.' . $code) : $msg,
+			'data'     => $data,
+		];
+		return response()->json($error);
+	}
 }
