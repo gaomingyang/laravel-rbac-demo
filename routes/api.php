@@ -37,4 +37,16 @@ Route::middleware(['auth:admin', 'permission'])->group(function () {
     Route::get('/users', [UserController::class, 'index']);
     Route::post('/users', [UserController::class, 'store']);
     Route::delete('/users/{id}', [UserController::class, 'destroy']);
+
+    Route::get('/goods', function () {
+        return '商品列表';
+    });
+
+    Route::post('/goods', function () {
+        return '创建商品';
+    });
+
+    Route::put('/goods/{id}', function ($id) {
+        return '修改商品'.$id;
+    });
 });
