@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\MenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,4 +50,9 @@ Route::middleware(['auth:admin', 'permission'])->group(function () {
     Route::put('/goods/{id}', function ($id) {
         return '修改商品'.$id;
     });
+});
+
+// 在 auth:admin 中间件组内添加
+Route::middleware(['auth:admin'])->group(function () {
+    Route::get('/menus', [MenuController::class, 'getUserMenus']);
 });

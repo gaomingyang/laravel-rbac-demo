@@ -9,7 +9,7 @@ class AdminRole extends Model
 {
     // use SoftDeletes;
     protected $table = 'admin_roles';
-    protected $fillable = ['id','role_name','description','created_by'];
+    protected $fillable = ['id','name','description','created_by'];
 
     public function menus()
     {
