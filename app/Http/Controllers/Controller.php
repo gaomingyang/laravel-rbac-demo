@@ -10,7 +10,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-	public function error($code, $msg = null, $data = null)
+    public function error($code, $msg = null, $data = null)
 	{
 		$error = [
 			'code'     => (int)$code,
@@ -20,4 +20,5 @@ class Controller extends BaseController
 		];
 		return response()->json($error);
 	}
+
 }
