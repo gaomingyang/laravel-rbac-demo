@@ -16,4 +16,9 @@ class AdminRole extends Model
         return $this->hasMany(AdminRoleMenu::class);
     }
 
+    public function permissions()
+    {
+        return $this->belongsToMany(AdminPermission::class, 'admin_role_permissions', 'role_id', 'permission_id');
+    }
+
 }
