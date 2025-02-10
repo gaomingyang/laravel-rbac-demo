@@ -39,7 +39,11 @@ class AdminUser extends Authenticatable implements JWTSubject
 
     public function getJWTCustomClaims()
     {
-        return [];
+        return [
+            'user_id' => $this->id,
+            'name' => $this->name,
+            'username' => $this->username
+        ];
     }
 
     // 与角色的关联关系

@@ -8,6 +8,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthController extends Controller
 {
@@ -44,9 +45,10 @@ class AuthController extends Controller
      */
     public function me(): JsonResponse
     {
+        $user = Auth::guard('admin')->user();
         return response()->json([
             'code' => 0,
-            'data' => Auth::guard('admin')->user()
+            'data' => $user
         ]);
     }
 
@@ -72,7 +74,8 @@ class AuthController extends Controller
      */
     public function refresh(): JsonResponse
     {
-        return $this->respondWithToken(Auth::guard('admin')->refresh());
+        $token = JWTAuth::parseToken()->refresh();
+        return $this->respondWithToken($token);
     }
 
     /**
@@ -88,7 +91,7 @@ class AuthController extends Controller
             'data' => [
                 'access_token' => $token,
                 'token_type' => 'bearer',
-                'expires_in' => Auth::guard('admin')->factory()->getTTL() * 60
+                'expires_in' => config('jwt.ttl') * 60,
             ]
         ]);
     }

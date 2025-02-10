@@ -207,8 +207,8 @@ CREATE TABLE `admin_users` (
 -- Records of admin_users
 -- ----------------------------
 BEGIN;
-INSERT INTO `admin_users` (`id`, `type`, `username`, `password`, `name`, `email`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES (1, 2, 'user1', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, 'user1@test.com', 1, '2025-02-09 23:21:23', '2025-02-09 23:35:34', NULL);
-INSERT INTO `admin_users` (`id`, `type`, `username`, `password`, `name`, `email`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES (2, 2, 'user2', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, 'user2@test.com', 1, '2025-02-09 23:21:31', '2025-02-09 23:54:01', NULL);
+INSERT INTO `admin_users` (`id`, `type`, `username`, `password`, `name`, `email`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES (1, 2, 'user1', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '用户1', 'user1@test.com', 1, '2025-02-09 23:21:23', '2025-02-09 23:35:34', NULL);
+INSERT INTO `admin_users` (`id`, `type`, `username`, `password`, `name`, `email`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES (2, 2, 'user2', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '用户2', 'user2@test.com', 1, '2025-02-09 23:21:31', '2025-02-09 23:54:01', NULL);
 INSERT INTO `admin_users` (`id`, `type`, `username`, `password`, `name`, `email`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES (3, 1, 'admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '超级管理员', 'admin@example.com', 1, '2025-02-09 23:28:04', '2025-02-10 00:23:56', NULL);
 COMMIT;
 
