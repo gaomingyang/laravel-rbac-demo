@@ -1,18 +1,18 @@
 ## Lara10 for test
 
 demo账号：
-user1@test.com  Us!12345
-user2@test.com  Us!12345
+user1@test.com  Us!12345  
+user2@test.com  Us!12345  
 
-菜单 admin_menus
-1.商品管理
-    3.商品修改
-2.订单管理
+菜单 admin_menus  
+1.商品管理  
+    3.商品修改  
+2.订单管理  
 
-权限：admin_permissions
-1.查询商品 get@goods
-2.创建商品 post@goods
-3.修改商品 put@goods
+权限：admin_permissions  
+1.查询商品 get@goods  
+2.创建商品 post@goods  
+3.修改商品 put@goods  
 
 菜单权限表 admin_menu_permissions
 1-1
