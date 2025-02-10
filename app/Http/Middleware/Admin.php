@@ -73,7 +73,7 @@ class Admin
 					// 'user_type' => 'normal',
 				];
 				$role_id = $user->role_id;
-				//对于学校账号，中间件增加权限判断
+				//中间件增加权限判断
 				if(config('app.verify_permission') == true){
 					$check = $this->checkPermission($request);
 					if (!$check){
