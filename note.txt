@@ -1,0 +1,23 @@
+POST /api/admin/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "password"
+}
+
+
+GET /api/admin/me
+Authorization: Bearer {token}
+
+POST /api/admin/logout
+Authorization: Bearer {token}
+
+POST /api/admin/refresh
+Authorization: Bearer {token}
+
+创建管理员账号：
+INSERT INTO `admin_users` (`username`, `password`, `name`, `email`, `status`, `created_at`) VALUES
+('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '超级管理员', 'admin@example.com', 1, NOW());
+
+用户admin密码password
